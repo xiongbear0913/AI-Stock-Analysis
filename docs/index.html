@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 智慧股票分析系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">AI STOCK ANALYSIS</div>
+        <nav>
+            <a href="#about">系統介紹</a>
+            <a href="#features">功能特色</a>
+            <a href="#result">分析展示</a>
+            <a href="#ai">AI 技術</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <p class="tag">GEMINI AI POWERED</p>
+        <h1>AI 智慧股票分析系統</h1>
+        <p class="subtitle">
+            結合 Python、金融資料與 Gemini AI，
+            讓歷史股票資料更容易理解。
+        </p>
+        <a href="#features" class="btn">探索系統</a>
+    </section>
+
+    <section id="about" class="section">
+        <h2>系統介紹</h2>
+        <p>
+            本專題使用 Python 取得台灣股票歷史資料，
+            並透過 Gemini AI 分析近期股價趨勢、
+            價格變化與可能風險，協助使用者理解股票資訊。
+        </p>
+    </section>
+
+    <section id="features" class="section">
+        <h2>核心功能</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>股票資料查詢</h3>
+                <p>取得股票近期開盤價、最高價、最低價、收盤價與成交量。</p>
+            </div>
+            <div class="card">
+                <h3>股價圖表展示</h3>
+                <p>使用 Matplotlib 繪製股價與成交量圖表。</p>
+            </div>
+            <div class="card">
+                <h3>Gemini AI 分析</h3>
+                <p>利用 AI 分析近期趨勢、價格變化與潛在風險。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="result" class="section">
+        <h2>分析結果展示</h2>
+        
+<div class="result-box">
+    <h3 id="stock-title">股票分析結果</h3>
+
+    <p><strong>近期趨勢：</strong></p>
+    <p id="trend">等待載入資料...</p>
+
+    <p><strong>價格分析：</strong></p>
+    <p id="price-analysis">等待載入資料...</p>
+
+    <p><strong>風險分析：</strong></p>
+    <p id="risk-analysis">等待載入資料...</p>
+
+    <p><strong>綜合摘要：</strong></p>
+    <p id="summary">等待載入資料...</p>
+
+    <p class="notice">
+        本系統僅供學習與歷史資料分析，不構成投資建議。
+    </p>
+</div>
+
+<script>
+async function loadAnalysis() {
+    try {
+        const response = await fetch("analysis.json");
+
+        if (!response.ok) {
+            throw new Error("找不到分析資料");
+        }
+
+        const data = await response.json();
+        const analysis = data.analysis;
+
+        document.getElementById("stock-title").textContent =
+            "股票分析結果：" + data.stock_id;
+
+        document.getElementById("trend").textContent =
+            analysis.trend;
+
+        document.getElementById("price-analysis").textContent =
+            analysis.price_analysis;
+
+        document.getElementById("risk-analysis").textContent =
+            analysis.risk_analysis;
+
+        document.getElementById("summary").textContent =
+            analysis.summary;
+
+    } catch (error) {
+        document.getElementById("stock-title").textContent =
+            "尚無股票分析資料";
+
+        document.getElementById("trend").textContent =
+            "請先執行 Python 股票分析程式。";
+    }
+}
+
+loadAnalysis();
+</script>
+
+    </section>
+    <section id="usage">
+        <h2>系統操作方式</h2>
+        <div class="result-box">
+            <p>1. 安裝 Python 與相關套件。</p>
+            <p>2. 設定 Gemini API Key。</p>
+            <p>3. 在終端機輸入 uv run main.py。</p>
+            <p>4. 輸入台灣上市股票代號，例如 2330。</p>
+            <p>5. 系統取得歷史股價資料，並使用 Gemini 產生分析結果。</p>
+            <p>6. 分析結果儲存為 JSON，供網頁讀取與展示。</p>
+        </div>
+    </section>
+
+    <section id="ai" class="section">
+        <h2>AI 技術與使用說明</h2>
+        <p>本專題使用 Google Gemini API，透過 Streaming 串流輸出與 Structured Output 結構化輸出產生分析結果。</p>
+        <p>使用者可在本機執行 Python 程式，輸入股票代號進行分析。</p>
+    </section>
+
+    <footer>
+        <p>AI 智慧股票分析系統｜課程專題作品</p>
+        <p>本系統僅供學習與資訊分析，不構成投資建議。</p>
+    </footer>
+
+</body>
+</html>

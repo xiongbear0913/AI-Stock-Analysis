@@ -1,0 +1,202 @@
+
+/* 基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
+    background: #0b1120;
+    color: #e5e7eb;
+    line-height: 1.8;
+}
+
+/* 導覽列 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 9%;
+    background: #111827;
+    border-bottom: 1px solid #263247;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: #38bdf8;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 24px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* 首頁主視覺 */
+.hero {
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #111827, #172554, #0f172a);
+}
+
+.tag {
+    color: #38bdf8;
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #cbd5e1;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #0284c7;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0369a1;
+    transform: translateY(-3px);
+}
+
+/* 內容區塊 */
+.section {
+    padding: 75px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 30px;
+    color: #38bdf8;
+    margin-bottom: 30px;
+}
+
+.section > p {
+    max-width: 850px;
+    margin: 12px auto;
+    color: #cbd5e1;
+}
+
+/* 功能卡片 */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card {
+    background: #172033;
+    padding: 30px 22px;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #38bdf8;
+}
+
+.card h3 {
+    color: #7dd3fc;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #cbd5e1;
+}
+
+/* 分析展示區 */
+.result-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    background: #172033;
+    border: 1px solid #334155;
+    border-radius: 14px;
+}
+
+.result-box h3 {
+    color: #7dd3fc;
+    margin-bottom: 15px;
+}
+
+.notice {
+    color: #fbbf24;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* 頁尾 */
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: #111827;
+    border-top: 1px solid #263247;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* 手機版排版 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 55px 7%;
+    }
+}
