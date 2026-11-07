@@ -221,3 +221,38 @@ footer {
         padding: 55px 7%;
     }
 }
+
+/* 本機與 Docker 比較表 */
+#comparison table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#comparison th,
+#comparison td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#comparison th {
+    background: rgba(0, 200, 255, 0.15);
+    color: #35d9ff;
+    font-weight: bold;
+}
+
+#comparison td {
+    color: #e0eaf5;
+}
+
+#comparison tr:hover td {
+    background: rgba(0, 200, 255, 0.07);
+}
+
+#comparison .result-box {
+    overflow-x: auto;
+}
+

@@ -134,6 +134,51 @@ loadAnalysis();
 
 
     <section id="ai" class="section">
+        
+    <section id="comparison" class="section">
+        <h2>本機與 Docker 執行方式比較</h2>
+        <p>本專題提供本機與 Docker 兩種執行方式，方便使用者依照環境選擇。</p>
+
+        <div class="result-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>比較項目</th>
+                        <th>本機執行</th>
+                        <th>Docker 執行</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>執行環境</td>
+                        <td>使用者電腦安裝 Python</td>
+                        <td>透過 Docker 容器執行</td>
+                    </tr>
+                    <tr>
+                        <td>套件管理</td>
+                        <td>使用 uv 安裝套件</td>
+                        <td>由 Dockerfile 自動安裝套件</td>
+                    </tr>
+                    <tr>
+                        <td>環境一致性</td>
+                        <td>可能受電腦環境影響</td>
+                        <td>較容易維持環境一致</td>
+                    </tr>
+                    <tr>
+                        <td>API Key 設定</td>
+                        <td>透過 .env 設定</td>
+                        <td>透過 --env-file 傳入</td>
+                    </tr>
+                    <tr>
+                        <td>啟動方式</td>
+                        <td>uv run main.py</td>
+                        <td>docker run -it --rm --env-file .env ai-stock-analysis</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
         <h2>AI 技術與使用說明</h2>
         <p>本專題使用 Google Gemini API，透過 Streaming 串流輸出與 Structured Output 結構化輸出產生分析結果。</p>
         <p>使用者可在本機執行 Python 程式，輸入股票代號進行分析。</p>
