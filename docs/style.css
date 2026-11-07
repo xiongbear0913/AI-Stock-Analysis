@@ -117,18 +117,23 @@ nav a:hover {
     margin-top: 35px;
 }
 
+
 .card {
     background: #172033;
     padding: 30px 22px;
     border: 1px solid #334155;
     border-radius: 14px;
-    transition: 0.3s;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: default;
 }
 
 .card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     border-color: #38bdf8;
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
 }
+
 
 .card h3 {
     color: #7dd3fc;
@@ -169,6 +174,22 @@ footer {
     color: #94a3b8;
     font-size: 14px;
 }
+
+
+/* 區塊標題視覺效果 */
+.section h2 {
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+
+/* 按鈕互動效果 */
+.btn {
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
+}
+
+.btn:hover {
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+}
+
 
 /* 手機版排版 */
 @media (max-width: 768px) {
