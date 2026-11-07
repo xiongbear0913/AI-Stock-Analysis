@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from ai_analysis import analyze_stock
 import json
+from stock_utils import is_valid_stock_id
 
 def plot_stock_chart(data, stock_id):
     """繪製股票價格與成交量圖表"""
@@ -158,7 +159,7 @@ def main():
 
     stock_id = input("\n請輸入股票代號（例如 2330）：").strip()
 
-    if not stock_id.isdigit() or not 4 <= len(stock_id) <= 6:
+    if not is_valid_stock_id(stock_id):
         print("股票代號格式不正確，請輸入 4 至 6 位數字。")
         return
 
